@@ -1,12 +1,8 @@
-package com.haydikodlayalim.accountservice.dto;
+package com.haydikodlayalim.client.contract;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.cassandra.core.mapping.Column;
-
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -25,5 +21,7 @@ public class AccountDto {
 
     private String birthDate;
 
-
+    public String getNameSurname() {
+        return this.name + " " + this.surname;
+    }
 }
