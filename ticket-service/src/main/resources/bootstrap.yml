@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      profile: native
+      uri: http://localhost:8888
+  application:
+    name: ticket-service
+
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: localhost:9300
+  elasticsearch:
+    jest:
+      uris: http://localhost:9200
