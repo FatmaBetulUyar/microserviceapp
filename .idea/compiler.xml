@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="hystrix-dashboard" />
+        <module name="gateway-server" />
         <module name="zipkin-server" />
         <module name="account-service" />
         <module name="eureka-server" />
@@ -17,8 +19,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="admin-server" target="11" />
-      <module name="gateway-server" target="11" />
-      <module name="hystrix-dashboard" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
