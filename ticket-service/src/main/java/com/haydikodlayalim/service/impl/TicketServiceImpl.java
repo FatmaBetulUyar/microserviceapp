@@ -9,6 +9,7 @@ import com.haydikodlayalim.model.TicketStatus;
 import com.haydikodlayalim.model.es.TicketModel;
 import com.haydikodlayalim.repository.TicketRepository;
 import com.haydikodlayalim.repository.es.TicketElasticRepository;
+import com.haydikodlayalim.service.TicketNotificationService;
 import com.haydikodlayalim.service.TicketService;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
@@ -22,13 +23,13 @@ public class TicketServiceImpl implements TicketService {
 
     private final TicketElasticRepository ticketElasticRepository;
     private final TicketRepository ticketRepository;
-    private final ModelMapper modelMapper;
+    private final TicketNotificationService ticketNotificationService;
     private final AccountServiceClient accountServiceClient;
 
-    public TicketServiceImpl(TicketElasticRepository ticketElasticRepository, TicketRepository ticketRepository, ModelMapper modelMapper, AccountServiceClient accountServiceClient) {
+    public TicketServiceImpl(TicketElasticRepository ticketElasticRepository, TicketRepository ticketRepository, ModelMapper modelMapper, TicketNotificationService ticketNotificationService, AccountServiceClient accountServiceClient) {
         this.ticketElasticRepository = ticketElasticRepository;
         this.ticketRepository = ticketRepository;
-        this.modelMapper = modelMapper;
+        this.ticketNotificationService = ticketNotificationService;
         this.accountServiceClient = accountServiceClient;
     }
 
@@ -67,6 +68,9 @@ public class TicketServiceImpl implements TicketService {
 
         // oluşan nesneyi döndür
         ticketDto.setId(String.valueOf(ticket.getId()));
+
+        // kuyruğa notification yaz
+        ticketNotificationService.sendToQueue(ticket);
         return ticketDto;
     }
 

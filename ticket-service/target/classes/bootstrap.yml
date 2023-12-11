@@ -5,6 +5,10 @@ spring:
       uri: http://localhost:8888
   application:
     name: ticket-service
+  stream:
+    bindings:
+      output:
+        destination: msqueue
 
   data:
     elasticsearch:

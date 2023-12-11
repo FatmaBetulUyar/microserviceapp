@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="zipkin-server" />
         <module name="account-service" />
         <module name="eureka-server" />
         <module name="service-common" />
+        <module name="notification-service" />
         <module name="ticket-service" />
       </profile>
     </annotationProcessing>
@@ -17,8 +19,6 @@
       <module name="admin-server" target="11" />
       <module name="gateway-server" target="11" />
       <module name="hystrix-dashboard" target="11" />
-      <module name="notification-service" target="11" />
-      <module name="zipkin-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
