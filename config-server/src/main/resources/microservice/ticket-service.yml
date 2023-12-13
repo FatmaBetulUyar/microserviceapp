@@ -30,3 +30,14 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8500/eureka/
     fetch-registry: true
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8508
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

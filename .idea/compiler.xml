@@ -9,6 +9,7 @@
         <module name="config-server" />
         <module name="hystrix-dashboard" />
         <module name="gateway-server" />
+        <module name="admin-server" />
         <module name="zipkin-server" />
         <module name="account-service" />
         <module name="eureka-server" />
@@ -17,9 +18,6 @@
         <module name="ticket-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="admin-server" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -5,7 +5,7 @@ spring:
   cloud:
     config:
       profile: native
-      uri: http://localhost:8888
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
 
     stream:
       bindings:
